@@ -7,8 +7,11 @@ export class ContactsService {
 
   private contacts: Contact[] = CONTACT_DATA;
 
-  getContacts() {
+  getContacts(): Contact[] {
     return this.contacts;
   }
 
+  getContactById(id: number): Contact {
+    return this.contacts.find((contact) => contact.id === id);
+  }
 }
