@@ -11,17 +11,17 @@ export class ContactsService {
   constructor(private http: Http) {}
 
   getContacts(): Observable<Contact[]> {
-    return this.callApi('contacts')
-      .map((data) => data.items);
+    return this.http.get(`${this.API_ENDPOINT}/contacts`)
+      .map((res) => res.json().items);
   }
 
-  getContactById(id: number): Observable<Contact> {
-    return this.callApi(`contacts/${id}`)
-      .map((data) => data.item);
+  getContact(id: number): Observable<Contact> {
+    return this.http.get(`${this.API_ENDPOINT}/contacts/${id}`)
+      .map((res) => res.json().item);
   }
 
-  callApi(url) {
-    return this.http.get(`${this.API_ENDPOINT}/${url}`)
-      .map((res) => res.json());
+  updateContact(contact: Contact) {
+    return this.http.put(`${this.API_ENDPOINT}/contacts/${contact.id}`, contact)
+      .map((res) => res.json().item);
   }
 }
