@@ -9,16 +9,12 @@ import { Contact } from "../models/contact";
 })
 export class ContactsListComponent implements OnInit {
 
-  private contactsService: ContactsService;
-
   contacts: Contact[];
 
-  constructor(contactsService: ContactsService) {
-    this.contactsService = contactsService;
-  }
-
+  constructor(private contactsService: ContactsService) {}
   ngOnInit() {
-    this.contacts = this.contactsService.getContacts();
+    this.contactsService.getContacts()
+      .subscribe(contacts => this.contacts = contacts);
   }
 
 }
