@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ContactsService } from "../contacts.service";
-import { ActivatedRoute, Router } from "@angular/router";
-import { Contact } from "../models/contact";
+
+import { ContactsService } from '../contacts.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Contact } from '../models/contact';
 
 @Component({
   selector: 'trm-contacts-editor',
