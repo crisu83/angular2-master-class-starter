@@ -3,15 +3,7 @@ import { Contact } from "./models/contact";
 
 @Component({
   selector: 'trm-contacts-app',
-  template: `
-<trm-contacts-header></trm-contacts-header>
-<ul class="collection">
-  <li class="collection-item avatar">
-    <img [src]=[contact.image] alt="" class="circle">
-    <span class="title">{{contact.name}}</span>
-  </li>
-</ul>
-`,
+  templateUrl: 'contacts.component.html',
   styleUrls: ['contacts.component.css']
 })
 export class ContactsAppComponent {
