@@ -1,0 +1,13 @@
+.collection,
+.card {
+  margin-top: 0;
+}
+
+.collection .collection-item.avatar .circle {
+ top: 1.5em;
+}
+
+.collection .collection-item .title {
+ margin-top: 1.5em;
+ display: inline-block;
+}
