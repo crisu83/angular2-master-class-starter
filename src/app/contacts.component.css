@@ -1,3 +1,17 @@
+/deep/ .collection,
+/deep/ .card {
+  margin-top: 0;
+}
+
+/deep/ .collection .collection-item.avatar .circle {
+  top: 1.5em;
+}
+
+/deep/ .collection .collection-item .title {
+  margin-top: 1.5em;
+  display: inline-block;
+}
+
 .flex-container {
   height: 100%;
   padding: 0;
