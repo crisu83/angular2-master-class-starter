@@ -1,4 +1,3 @@
-<input (input)="search.emit($event.target.value)" type="text"/>
 <ul class="collection">
   <li class="collection-item avatar" *ngFor="let contact of contacts">
     <a (click)="detail.emit(contact)">

@@ -14,6 +14,7 @@ import { ContactsDetailViewComponent } from './contacts-detail-view/contacts-det
 import { ContactsDetailComponent } from './contacts-detail/contacts-detail.component';
 import { ContactsEditorViewComponent } from './contacts-editor-view/contacts-editor-view.component';
 import { ContactsEditorComponent } from './contacts-editor/contacts-editor.component';
+import { ContactsSearchComponent } from './contacts-search/contacts-search.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ContactsEditorComponent } from './contacts-editor/contacts-editor.compo
     ContactsDetailViewComponent,
     ContactsDetailComponent,
     ContactsEditorViewComponent,
-    ContactsEditorComponent
+    ContactsEditorComponent,
+    ContactsSearchComponent
   ],
   imports: [
     BrowserModule,

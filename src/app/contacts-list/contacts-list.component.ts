@@ -11,6 +11,7 @@ export class ContactsListComponent {
   @Input() contacts: Contact[];
 
   @Output() search = new EventEmitter<string>();
+
   @Output() detail = new EventEmitter<Contact>();
 
 }

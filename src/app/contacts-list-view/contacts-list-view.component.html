@@ -1,4 +1,5 @@
+<trm-contacts-search (search)="terms$.next($event)">
+</trm-contacts-search>
 <trm-contacts-list [contacts]="contacts"
-                   (search)="terms$.next($event)"
                    (detail)="navigateToDetail($event)">
 </trm-contacts-list>
