@@ -1,12 +1,11 @@
-import { BrowserModule } from '@angular/platform-browser';
+import 'rxjs/add/operator/map';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
-import 'rxjs/add/operator/map';
-import { API_ENDPOINT } from './app.tokens';
+import { APP_PROVIDERS } from './app.providers';
 import { ContactsAppRoutes } from './app.routes';
-import { ContactsService } from './contacts.service';
 import { ContactsAppComponent } from './contacts.component';
 import { ContactsHeaderComponent } from './contacts-header/contacts-header.component'
 import { ContactsListViewComponent } from './contacts-list-view/contacts-list-view.component';
@@ -34,10 +33,7 @@ import { ContactsEditorComponent } from './contacts-editor/contacts-editor.compo
     FormsModule
   ],
   bootstrap: [ContactsAppComponent],
-  providers: [
-    ContactsService, // shorthand syntax for: { provide: ContactsService, useClass: ContactsService }
-    { provide: API_ENDPOINT, useValue: '//localhost:4201/api' }
-  ]
+  providers: APP_PROVIDERS
 })
 export class ContactsModule {
 
