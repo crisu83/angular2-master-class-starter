@@ -6,5 +6,8 @@ export const APP_PROVIDERS = [
   ContactsService, // shorthand syntax for: { provide: ContactsService, useClass: ContactsService }
   EventBusService,
   { provide: API_ENDPOINT, useValue: '//localhost:4201/api' },
-  { provide: CONFIRM_NAVIGATION_GUARD, useValue: () => window.confirm('Are you sure?') }
+  {
+    provide: CONFIRM_NAVIGATION_GUARD,
+    useValue: (component) => !component.warnOnClosing || window.confirm('Are you sure?')
+  }
 ];

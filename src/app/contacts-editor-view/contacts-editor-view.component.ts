@@ -13,6 +13,8 @@ export class ContactsEditorViewComponent implements OnInit {
 
   contact: Contact = <Contact>{ address: {} };
 
+  warnOnClosing: boolean = true;
+
   constructor(private contactsService: ContactsService,
               private route: ActivatedRoute,
               private router: Router) {}
@@ -29,6 +31,8 @@ export class ContactsEditorViewComponent implements OnInit {
   }
 
   private save(contact: Contact) {
+    this.warnOnClosing = false;
+
     this.contactsService.updateContact(contact)
       .subscribe(() => this.goToDetails(contact));
   }
