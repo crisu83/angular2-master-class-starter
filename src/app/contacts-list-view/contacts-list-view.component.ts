@@ -12,7 +12,7 @@ import { EventBusService } from '../event-bus.service';
 })
 export class ContactsListViewComponent implements OnInit {
 
-  contacts: Contact[];
+  contacts: Observable<Contact[]>;
 
   private terms$ = new Subject<string>();
 
@@ -24,12 +24,9 @@ export class ContactsListViewComponent implements OnInit {
   ngOnInit() {
     this.eventBusService.emit(EventBusService.EVENT_TITLE_CHANGED, 'Contacts');
 
-    Observable.merge(
+    this.contacts = Observable.merge(
       this.contactsService.getContacts().takeUntil(this.terms$),
       this.contactsService.search(this.terms$, 400)
-    ).subscribe(
-      (contacts) => this.contacts = contacts,
-      (error) => console.error(error)
     );
   }
 
