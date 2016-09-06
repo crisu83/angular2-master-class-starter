@@ -15,6 +15,7 @@ import { ContactsEditorComponent } from './contacts-editor/contacts-editor.compo
 import { API_ENDPOINT } from './app.tokens';
 
 import 'rxjs/add/operator/map';
+import { ContactsDetailViewComponent } from './contacts-detail-view/contacts-detail-view.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import 'rxjs/add/operator/map';
     ContactsHeaderComponent,
     ContactsListComponent,
     ContactsDetailComponent,
-    ContactsEditorComponent
+    ContactsEditorComponent,
+    ContactsDetailViewComponent
   ],
   imports: [
     BrowserModule,
