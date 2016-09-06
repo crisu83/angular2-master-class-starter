@@ -24,9 +24,16 @@ export class ContactsService {
     return this.http.put(`${this.apiEndpoint}/contacts/${contact.id}`, contact);
   }
 
-  search(term: string) {
+  rawSearch(term: string): Observable<Contact[]> {
     return this.http.get(`${this.apiEndpoint}/search?text=${term}`)
       .map((res) => res.json().items);
+  }
+
+  search(terms: Observable<string>, debounceMs = 400): Observable<Contact[]> {
+    return terms
+      .debounceTime(debounceMs)
+      .distinctUntilChanged()
+      .switchMap((term) => this.rawSearch(term));
   }
 
 }
