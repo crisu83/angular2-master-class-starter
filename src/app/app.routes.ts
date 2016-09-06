@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { ContactsDetailViewComponent } from './contacts-detail-view';
 import { ContactsEditorViewComponent } from './contacts-editor-view';
 import { ContactsDashboardComponent } from './contacts-dashboard';
+import { AboutComponent } from './about/about.component';
 
 export const ContactsAppRoutes: Routes = [
   {
@@ -12,5 +13,6 @@ export const ContactsAppRoutes: Routes = [
       { path: 'contacts/:id', component: ContactsDetailViewComponent },
       { path: 'contacts/:id/edit', component: ContactsEditorViewComponent }
     ]
-  }
+  },
+  { path: 'about', component: AboutComponent }
 ];

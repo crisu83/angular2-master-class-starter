@@ -12,6 +12,7 @@ export class ContactsEditorComponent {
   @Input() contact: Contact;
 
   @Output() save = new EventEmitter<Contact>();
+
   @Output() cancel = new EventEmitter<Contact>();
 
 }

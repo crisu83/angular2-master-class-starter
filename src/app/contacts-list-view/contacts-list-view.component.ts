@@ -16,14 +16,10 @@ export class ContactsListViewComponent implements OnInit {
 
   private terms$ = new Subject<string>();
 
-  constructor(private contactsService: ContactsService,
-              private eventBusService: EventBusService,
-              private router: Router) {
+  constructor(private contactsService: ContactsService, private router: Router) {
   }
 
   ngOnInit() {
-    this.eventBusService.emit(EventBusService.EVENT_TITLE_CHANGED, 'Contacts');
-
     this.contacts = Observable.merge(
       this.contactsService.getContacts().takeUntil(this.terms$),
       this.contactsService.search(this.terms$, 400)

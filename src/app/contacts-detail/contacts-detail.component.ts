@@ -10,7 +10,6 @@ export class ContactsDetailComponent {
 
   @Input() contact: Contact;
 
-  @Output() back = new EventEmitter();
   @Output() edit = new EventEmitter<Contact>();
 
 }

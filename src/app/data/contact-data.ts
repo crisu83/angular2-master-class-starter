@@ -31,7 +31,7 @@ export const CONTACT_DATA = [
     },
     {
         id: 2,
-        name: 'Nicole Hansen',
+        name: 'Brent Mason',
         email: 'who@car.es',
         phone: '+49 000 333',
         birthday: '1981-03-31',
@@ -121,7 +121,7 @@ export const CONTACT_DATA = [
     },
     {
         id: 8,
-        name: 'Brent Mason',
+        name: 'Nicole Hansen',
         email: '',
         phone: '',
         birthday: '',

@@ -14,7 +14,6 @@ export class ContactsEditorViewComponent implements OnInit {
   contact: Contact = <Contact>{ address: {} };
 
   constructor(private contactsService: ContactsService,
-              private eventBusService: EventBusService,
               private route: ActivatedRoute,
               private router: Router) {}
 
@@ -22,10 +21,7 @@ export class ContactsEditorViewComponent implements OnInit {
     const id: number = Number(this.route.snapshot.params['id']);
 
     this.contactsService.getContact(id)
-      .subscribe((contact) => {
-        this.eventBusService.emit(EventBusService.EVENT_TITLE_CHANGED, `Editing: ${contact.name}`);
-        return this.contact = contact;
-      });
+      .subscribe((contact) => this.contact = contact);
   }
 
   private cancel(contact: Contact) {
