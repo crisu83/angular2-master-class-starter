@@ -13,9 +13,17 @@ export class ContactsListComponent implements OnInit {
   contacts: Contact[];
 
   constructor(private contactsService: ContactsService) {}
+
   ngOnInit() {
-    this.contactsService.getContacts()
-      .subscribe(contacts => this.contacts = contacts);
+    this.contactsService.getContacts().subscribe(this.setContacts);
+  }
+
+  search(term: string) {
+    this.contactsService.search(term).subscribe(this.setContacts);
+  }
+
+  setContacts = (contacts: Contact[]) => {
+    this.contacts = contacts;
   }
 
 }
