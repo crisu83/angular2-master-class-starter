@@ -1,7 +1,7 @@
-<input (input)="terms$.next($event.target.value)" type="text"/>
+<input (input)="search.emit($event.target.value)" type="text"/>
 <ul class="collection">
-  <li class="collection-item avatar" *ngFor="let contact of contacts | async">
-    <a [routerLink]="['/contacts', contact.id]">
+  <li class="collection-item avatar" *ngFor="let contact of contacts">
+    <a (click)="detail.emit(contact)">
       <img [src]="contact.image" alt="" class="circle">
       <span class="title">{{contact.name}}</span>
     </a>
