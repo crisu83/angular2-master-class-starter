@@ -1,4 +1,4 @@
-<input (input)="search($event.target.value)" type="text"/>
+<input (input)="terms$.next($event.target.value)" type="text"/>
 <ul class="collection">
   <li class="collection-item avatar" *ngFor="let contact of contacts | async">
     <a [routerLink]="['/contacts', contact.id]">
